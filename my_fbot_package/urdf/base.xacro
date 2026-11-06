@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:property name="base_length" value="0.5"/>
+    <xacro:property name="base_width" value="0.4"/>
+    <xacro:property name="base_height" value="0.2"/>
+
+    <xacro:macro name="base_link">
+        <link name="base_link">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <box size="${base_length} ${base_width} ${base_height}"/>
+                </geometry>
+
+                <material name="red"/>
+            </visual>
+
+            <collision>
+                 <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <box size="${base_length} ${base_width} ${base_height}"/>
+                </geometry>
+            </collision>
+
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="10.0"/>
+                <inertia ixx="0.15" iyy="0.20" izz="0.30" ixy="0" ixz="0" iyz="0"/>
+            </inertial>
+
+        </link>
+
+    </xacro:macro>
+
+</robot>
